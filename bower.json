@@ -1,0 +1,15 @@
+{
+  "name": "git-stats",
+  "authors": [
+    "alexkomrakov <alexkomrakov@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.3",
+    "angular": "1.5.*",
+    "angular-resource": "1.5.*"
+  }
+}

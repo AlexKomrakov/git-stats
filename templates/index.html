@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="/js/app/app.js" type="text/javascript"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-controller="IndexController as IndexController">
+<header class="gs-navbar">
+    <div class="stripe-left"></div>
+    <b class="m-l-1 logo">Git Stats</b>
+</header>
+<div class="layout-body" ng-cloak>
+    <div style="width: 100%;">
+        <h4 class="text-uppercase m-y-3 text-muted">Git repository stats</h4>
+        <div class="container">
+            <form name="StatsForm">
+                <input class="form-control" type="text" name="user" placeholder="User" ng-model="form.user" required>
+                <input class="form-control m-y-1" type="password" name="pass" placeholder="Password" ng-model="form.pass" required>
+                <input class="form-control" type="text" name="repo" placeholder="Repository url" ng-model="form.repo" required>
+                <button class="btn btn-block btn-secondary m-y-1"
+                        type="button"
+                        ng-click="IndexController.loadStats(form)"
+                        ng-disabled="StatsForm.$invalid || IndexController.request.$resolved == false">
+                    Load stats
+                </button>
+            </form>
+            <div ng-show="IndexController.request.$resolved == false">
+                <div class="spinner m-t-1">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="text-xs-center">
+                    <small class="text-muted m-t-3" >Process can take a few minutes</small>
+                </div>
+            </div>
+            <div class="row m-t-3" ng-show="IndexController.stats && IndexController.request.$resolved">
+                <div class="col-md-6">
+                    <div class="card card-block">
+                        <h3 class="m-b-0">
+                            <b>[[IndexController.stats.commits.Commits]]</b>
+                        </h3>
+                        <small>Commits</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-block">
+                        <h3 class="m-b-0">
+                            <b>[[IndexController.stats.commits.Authors.length]]</b>
+                        </h3>
+                        <small>Authors</small>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="card card-block" ng-repeat="authorInfo in IndexController.stats.commits.Authors | orderBy:'Commits':true">
+                        <b>[[authorInfo.Commits]]</b> [[authorInfo.Email]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-xs-center m-y-1">
+    <small class="text-muted">© {{ .year }}
+        <a href="https://github.com/alexkomrakov" target="_blank">Alex Komrakov</a>
+    </small>
+</footer>
+</body>
+</html>

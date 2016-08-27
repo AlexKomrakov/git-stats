@@ -1,0 +1,17 @@
+{
+  "name": "git-stats",
+  "version": "1.0.0",
+  "description": "",
+  "author": "alexkomrakov",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^6.4.0",
+    "bower": "^1.7.9",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "postcss-flexbugs-fixes": "^2.0.0"
+  }
+}
