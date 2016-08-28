@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="card card-block" ng-repeat="authorInfo in IndexController.stats.commits.Authors | orderBy:'Commits':true">
-                        <b>[[authorInfo.Commits]]</b> [[authorInfo.Email]]
+                        <b class="pull-xs-right">[[authorInfo.Commits]]</b> [[authorInfo.Email]]
                     </div>
                 </div>
             </div>

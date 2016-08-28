@@ -1,0 +1,8 @@
+golang:
+  image: golang:1.6
+  working_dir: /go/src/project
+  command: bash -c 'go get ./... && go build && project'
+  ports:
+    - "8000:8000"
+  volumes:
+    - .:/go/src/project
