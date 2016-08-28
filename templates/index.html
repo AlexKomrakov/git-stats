@@ -47,6 +47,7 @@
                 </div>
             </div>
             <div class="row m-t-3" ng-show="IndexController.stats && IndexController.request.$resolved">
+                <h5 class="m-y-1 text-muted text-uppercase text-xs-center">Total stats</h5>
                 <div class="col-md-6">
                     <div class="card card-block">
                         <h3 class="m-b-0">
@@ -64,6 +65,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12">
+                    <h5 class="m-y-1 text-muted text-uppercase text-xs-center">Commits per author</h5>
                     <div class="card card-block" ng-repeat="authorInfo in IndexController.stats.commits.Authors | orderBy:'Commits':true">
                         <b class="pull-xs-right">[[authorInfo.Commits]]</b> [[authorInfo.Email]]
                     </div>
