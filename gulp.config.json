@@ -1,5 +1,5 @@
 {
-  "browser-sync": {
+  "browsersync": {
     "open": "tunnel",
     "tunnel": true,
     "proxy": "0.0.0.0:8000"
