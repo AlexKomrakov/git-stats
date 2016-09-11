@@ -4502,10 +4502,8 @@ body {
   padding: 0;
   margin: 0;
   color: rgba(0, 0, 0, 0.87);
-  display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  -ms-flex-direction: column;
   flex-direction: column; }
 
 h4 {
@@ -4516,10 +4514,8 @@ h4 {
   display: none; }
 
 .layout-body {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex: 1;
-  flex: 1 1 0%; }
+  flex: 1; }
 
 .logo {
   letter-spacing: 4px; }

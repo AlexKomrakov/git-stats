@@ -23,8 +23,7 @@
   },
   "bower": {
     "files": [
-      "./bower_components/**/*.*"
     ],
-    "dest": "./public/js"
+    "dest": "./public/js/vendor"
   }
 }
