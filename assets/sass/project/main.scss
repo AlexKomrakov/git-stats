@@ -1,0 +1,74 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  word-wrap: break-word;
+  padding: 0;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.87);
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h4 {
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+[ng-cloak] {
+  display: none;
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+}
+
+.logo {
+  letter-spacing: 4px;
+}
+
+.gs-navbar {
+  width: 100%;
+  background-color: #141414;
+  color: #FFFFFF;
+  padding: 20px;
+  position: relative;
+}
+
+.stripe-left {
+  background-color: #FFCC01;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+}
+
+.spinner {
+  position: relative;
+  width: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 4px;
+  background: #FFCC01;
+  animation: spin 1.5s infinite ease;
+
+  &:nth-of-type(2) { animation-delay: 0.1s; }
+  &:nth-of-type(3) { animation-delay: 0.2s; }
+  &:nth-of-type(4) { animation-delay: 0.3s; }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
